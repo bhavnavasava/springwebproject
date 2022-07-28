@@ -8,6 +8,7 @@
 <title>List users</title>
 </head>
 <body>
+<h2>List Users</h2>
 	<table border="1">
 		<tr>
 			<th>UserId</th>
@@ -16,6 +17,8 @@
 			<th>Email</th>
 			<th>Password</th>
 			<th>UserType</th>
+			<th>Action</th>
+
 		</tr>
 		<c:forEach items="${users}" var="u">
 			<tr>
@@ -25,6 +28,10 @@
 				<td>${u.email}</td>
 				<td>${u.password}</td>
 				<td>${u.userType}</td>
+				<td><a href="Deleteuser?userId=${u.userId}">Delete</a> 
+				|<a href="viewuser?userId=${u.userId}">View</a>
+				|<a href="edituser?userId=${u.userId}">Update</a></td>
+
 			</tr>
 		</c:forEach>
 	</table>
